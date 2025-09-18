@@ -42,7 +42,7 @@ class AuthController extends Controller
 
             $request->session()->regenerate();
 
-            return redirect()->intended('dashboard');
+            return redirect()->intended('staff');
         }
 
         return back()->withErrors([

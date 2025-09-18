@@ -109,9 +109,9 @@
 @section('body')
 <div
 id="acceuil"
-class="relative bg-white dark:bg-dark pt-[20px] pb-[110px] lg:pt-[50px]"
+class="relative bg-white dark:bg-dark pt-[20px] pb-[110px] lg:pt-[150px]"
 >
-<div class="container mx-auto lg:px-36 px-6 md:px-12">
+<div class="container mx-auto px-6">
   <div class="flex flex-wrap -mx-4 items-center">
     <div class="w-full px-4 lg:w-5/12">
       <div class="hero-content flex flex-col items-center md:block">
@@ -186,7 +186,7 @@ class="relative bg-white dark:bg-dark pt-[20px] pb-[110px] lg:pt-[50px]"
 id="services"
 class="pt-20 pb-12 lg:pt-[120px] dark:bg-dark lg:pb-[90px]"
 >
-<div class="container mx-auto lg:px-36 px-6 md:px-12">
+<div class="container mx-auto">
   <div class="flex flex-wrap -mx-4">
     <div class="w-full px-6">
       <div class="mx-auto mb-[60px] max-w-[510px] text-center">
@@ -554,7 +554,7 @@ class="overflow-hidden bg-[#f7f8fa] pt-20 pb-20 lg:pt-[120px] lg:pb-[120px]"
 <!-- Testimonial -->
 
 <section class="pt-20 pb-7 lg:pt-[120px] lg:pb-14 px-4">
-<div class="container mx-auto lg:px-36 px-6 md:px-12">
+<div class="container mx-auto">
   <div class="flex flex-wrap justify-center -mx-4">
     <div class="w-full px-4">
       <div class="mb-[60px] max-w-[510px] lg:mb-[70px]">
@@ -678,7 +678,62 @@ class="pt-[110px] pb-[60px] flex flex-col justify-content-center items-center"
   >
     <!-- blog item -->
     @forelse ($latest_posts as $post)
+
     <div class="group">
+            <div
+              class="mb-6 overflow-hidden rounded-[10px] transition-all group-hover:scale-105"
+            >
+              <a href="{{ route('blog.details',['slug'=>$post->slug]) }}">
+                <img
+                  src="/storage/{{$post->avatar}}"
+                  alt="post image"
+                  class="w-full"
+                  loading="lazy"
+                />
+              </a>
+            </div>
+
+            <h4>
+              <a
+                href="{{ route('blog.details',['slug'=>$post->slug]) }}"
+                class="block text-dark font-bold text-xl mb-3.5"
+              >
+                <span
+                  class="bg-linear-to-r htitle from-primary/50 to-primary/40 bg-[length:0px_10px] bg-left-bottom bg-no-repeat transition-[background-size] duration-500 hover:bg-[length:100%_3px] group-hover:bg-[length:100%_10px]"
+                >
+                  {{ $post->title }}
+                </span>
+              </a>
+            </h4>
+            <p class="paragraphs">
+              {{ $post->content }}
+            </p>
+            <div
+              class="flex flex-wrap gap-3 items-center justify-between mt-4.5"
+            >
+              <div class="flex items-center gap-2.5">
+                <a href="{{ route('blog.details',['slug'=>$post->slug]) }}" class="flex items-center gap-3">
+                  <div class="flex w-6 h-6 rounded-full overflow-hidden">
+                    <img src="/storage/{{$post->user->avatar}}" alt="user" loading="lazy"/>
+                  </div>
+                  <p class="text-sm">{{$post->user->name}}</p>
+                </a>
+
+                <span
+                  class="flex w-[3px] h-[3px] rounded-full bg-dark-2"
+                ></span>
+
+                <p class="text-sm">{{ $post->created_at->format('M, d-Y') }} </p>
+              </div>
+              <a
+                href="#"
+                class="inline-flex text-[#a5b4fc] bg-[#3758f90d] font-medium text-sm py-1 px-3 rounded-full"
+                >{{ $post->category->name }}</a
+              >
+            </div>
+      </div>
+
+    {{-- <div class="group">
       <div
         class="mb-6 overflow-hidden rounded-[10px] transition-all group-hover:scale-105"
       >
@@ -729,11 +784,22 @@ class="pt-[110px] pb-[60px] flex flex-col justify-content-center items-center"
           > {{ $post->category->name }} </a
         >
       </div>
-    </div>
+    </div> --}}
+    
     @empty
         <h1>Aucun blog récement publié; retrouvez-nous prochainement !</h1>
     @endforelse
+
   </div>
+  <div class="text-center">
+        <button>
+          <a href="{{ route('blogs') }}"
+          class="flex justify-center cursor-pointer font-medium text-gray-900 border border-gray-900 rounded-md py-3 px-7.5 hover:bg-gray-900 hover:text-white ease-in duration-200 mx-auto mt-12.5 lg:mt-17.5"
+        >
+          Browse all posts
+        </a>
+        </button>
+    </divc>
 </div>
 </section>
 
@@ -741,7 +807,7 @@ class="pt-[110px] pb-[60px] flex flex-col justify-content-center items-center"
 
 <section
 id="contact"
-class="relative z-10 overflow-hidden lg:px-36 px-6 md:px-12 bg-white dark:bg-dark py-20 lg:py-[120px] px-4"
+class="relative z-10 overflow-hidden bg-white dark:bg-dark py-20 px-4"
 >
 <div class="container mx-auto ">
   <div class="flex flex-wrap -mx-4 lg:justify-between">
@@ -793,7 +859,7 @@ class="relative z-10 overflow-hidden lg:px-36 px-6 md:px-12 bg-white dark:bg-dar
               Notre Addresse
             </h4>
             <p class="text-gray-500">
-              Burundi, Bujumbura/ Cibitoke 12eme Av. NO. 41.
+              Burundi, Bujumbura/ Kinama-Gitega 9eme Av. NO. 24.
             </p>
           </div>
         </div>
@@ -867,7 +933,7 @@ class="relative z-10 overflow-hidden lg:px-36 px-6 md:px-12 bg-white dark:bg-dar
             >
               Adresse e-mail
             </h4>
-            <p class="text-gray-500">microgels17@gmail.com</p>
+            <p class="text-gray-500">info@microgells.com</p>
           </div>
         </div>
       </div>

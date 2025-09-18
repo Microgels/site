@@ -1,5 +1,5 @@
 <header class="left-0 w-full  backdrop-blur-md text-white border-gray-200 bg-gray-600/5 sticky top-0 z-50">
-    <div class="container mx-auto lg:px-36 px-6 md:px-12">
+    <div class="container mx-auto px-6">
       <div class="relative flex items-center justify-between">
         <!-- Logo à gauche -->
         <div class="flex-shrink-0">

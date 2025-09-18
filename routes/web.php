@@ -1,6 +1,5 @@
 <?php
 
-use App\Http\Controllers\ContactController;
 use App\Http\Controllers\ViewsController;
 use App\Models\Member;
 use App\Models\Post;
@@ -17,6 +16,6 @@ Route::get('/', function () {
 Route::get('/blogs', [ViewsController::class,'blogs'])->name('blogs');
 Route::get('/blogs/{category}', [ViewsController::class,'blogsCategories'])->name('blogs.catgories');
 Route::get('/blog/{slug}', [ViewsController::class,'blogDetails'])->name('blog.details');
-
+Route::post('/blog/{slug}', [ViewsController::class,'comment'])->name('blog.comment');
 require __DIR__.'/settings.php';
 require __DIR__.'/auth.php';

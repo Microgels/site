@@ -158,10 +158,10 @@
             commander un service
           </h4>
           <p
-            data-translate="We handle communication with customers via WhatsApp or online chat"
+            data-translate="We handle communication with customers via email, WhatsApp or online chat"
             class="text-white pb-2"
           >
-            Nous prenons en charge la communication avec les clients via
+            Nous prenons en charge la communication avec les clients via email,
             WhatsApp ou un chat en ligne
           </p>
           <form onsubmit="" action="#" class="flex flex-row flex-wrap">
@@ -219,7 +219,7 @@
           ></a>
 
           <a
-            href="./contact.html"
+            href="mailto:info@microgells.com?subject=Web%20Site%20Contact"
             class="w-10 h-10 rounded-full bg-[#1f2039] hover:bg-bleu_ray mx-1 inline-block pt-1"
             ><i class="bi bi-envelope text-white"></i
           ></a>

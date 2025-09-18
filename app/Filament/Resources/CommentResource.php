@@ -19,8 +19,9 @@ class CommentResource extends Resource
     {
         return $table
             ->columns([
-                Tables\Columns\TextColumn::make('post_id')
+                Tables\Columns\TextColumn::make('post.title')
                     ->numeric()
+                    ->label(label: 'Post title')
                     ->sortable(),
                 Tables\Columns\TextColumn::make('email')
                     ->searchable(),
@@ -29,10 +30,8 @@ class CommentResource extends Resource
                     ->dateTime()
                     ->sortable()
                     ->toggleable(isToggledHiddenByDefault: false),
-                Tables\Columns\TextColumn::make('updated_at')
-                    ->dateTime()
-                    ->sortable()
-                    ->toggleable(isToggledHiddenByDefault: true),
+                Tables\Columns\TextColumn::make('content')
+                    ->label('Comment'),
             ])
             ->filters([
                 //

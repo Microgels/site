@@ -232,10 +232,10 @@
                     </span>
                   </a>
                 </h4>
-                {{-- the post content must sub stringed by a js script --}}
-                {{-- <div>
+                
+                <div class="paragraphs">
                   {!! $converter->convert($post->content)->getContent() !!}
-                </div> --}}
+                </div>
 
                 <div
                   class="flex flex-wrap gap-3 items-center justify-between mt-4.5"

@@ -11,9 +11,8 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::table('projects', function (Blueprint $table) {
-            $table->string('slug');
-            $table->json('tags');
+        Schema::table('posts', function (Blueprint $table) {
+            $table->removeColumn('category');
         });
     }
 

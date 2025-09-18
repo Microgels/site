@@ -3,14 +3,16 @@
 namespace App\Models;
 
 // use Illuminate\Contracts\Auth\MustVerifyEmail;
+use Filament\Models\Contracts\FilamentUser;
 use Illuminate\Contracts\Auth\CanResetPassword;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Support\Str;
+use Filament\Panel;
 
 
-class User extends Authenticatable implements CanResetPassword
+class User extends Authenticatable implements FilamentUser, CanResetPassword
 {
     /** @use HasFactory<\Database\Factories\UserFactory> */
     use HasFactory, Notifiable;
@@ -23,7 +25,6 @@ class User extends Authenticatable implements CanResetPassword
     protected $fillable = [
         'name',
         'email',
-        'workos_id',
         'avatar',
     ];
 
@@ -64,5 +65,13 @@ class User extends Authenticatable implements CanResetPassword
     public function blogs()
     {
         return $this->hasMany(Post::class);
+    }
+
+     public function canAccessPanel(Panel $panel): bool
+    {
+        if (auth()->check()) {
+            return true;
+        }
+        return false;
     }
 }

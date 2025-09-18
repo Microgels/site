@@ -60,6 +60,29 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 });
 
+document.addEventListener("DOMContentLoaded", function () {
+    const paragraphs = document.querySelectorAll(".paragraphs");
+
+    paragraphs.forEach(p => {
+      let text = p.textContent.trim();
+
+      if (text.length > 12) {
+        p.textContent = text.substring(0, 90) + "...";
+      }
+    });
+  });
+
+  document.addEventListener("DOMContentLoaded", function () {
+    const title = document.querySelectorAll(".title");
+
+    title.forEach(h => {
+      let t = h.textContent.trim();
+
+      if (t.length > 9) {
+        h.textContent = t.substring(0, 30) + "...";
+      }
+    });
+  });
 
 document.addEventListener("DOMContentLoaded", function () {
 
@@ -81,7 +104,7 @@ document.addEventListener("DOMContentLoaded", function () {
       "Résoudre les problèmes quotidiens grâce aux solutions numériques",
     "Microgels specializes in providing digital solutions for small and medium-sized businesses. Our services include application/website development, IT network administration, graphic design, and digital skills training support, making us the ideal IT partner to boost your business growth.":
       "Microgels est une entreprise spécialisée dans la fourniture des solutions numériques pour les petites et moyenes entreprises. Nos Services incluent le développement d'applications/sites web, l'administration des réseaux informatiques, le graphisme et l'accompagnement dans l'apprentissage des competences numériques; ce qui fait de nous le partenaire informatique idéal pour stimuler la croissance de votre entreprise",
-    "Get Started": "Commencer",
+    "Explore Microgels Services": " Explorer les services Microgels",
 
     // Services section
     "What we serve": "Ce que nous servons",
@@ -159,8 +182,8 @@ document.addEventListener("DOMContentLoaded", function () {
       "Accompagnement dans l'apprentissage des métiers numériques",
     "Graphic Design": "Graphisme",
     "Write to us or order a service": "Nous écrire ou commander un service",
-    "We handle communication with customers via WhatsApp or online chat":
-      "Nous prenons en charge la communication avec les clients via WhatsApp ou un chat en ligne",
+    "We handle communication with customers via email, WhatsApp or online chat":
+      "Nous prenons en charge la communication avec les clients via email, WhatsApp ou un chat en ligne",
     "Message": "Message",
     "Send": "Envoyer",
     "empty message!": "message vide !",

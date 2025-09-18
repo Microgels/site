@@ -51,6 +51,8 @@ class PostResource extends Resource
                     ->previewable()
                     ->imageEditor()
                     ->required(),
+                Forms\Components\TextInput::make('conclusion')
+                    ->required()
             ]);
     }
 
@@ -78,9 +80,9 @@ class PostResource extends Resource
                     ->dateTime()
                     ->sortable()
                     ->toggleable(isToggledHiddenByDefault: false),
-                Tables\Columns\TextColumn::make('updated_at')
-                    ->dateTime()
-                    ->sortable()
+                Tables\Columns\TextColumn::make('conclusion')
+                    //->dateTime()
+                    //->sortable()
                     ->toggleable(isToggledHiddenByDefault: false),
             ])
             ->filters([

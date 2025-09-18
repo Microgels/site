@@ -67,6 +67,7 @@ class ViewsController extends Controller
     {
         $categories = Category::all();
         $post = Post::where('slug',$slug)->first();
+        //dd($post);
         $env = new Environment([
             'html_input' => 'escape',
         ]);
@@ -79,15 +80,30 @@ class ViewsController extends Controller
                                 ->get();
 
         $tags = [];
-        foreach ($related_posts as $post) {
-            $tags = array_keys(array_flip($tags) + array_flip($post->tags));
+        foreach ($related_posts as $related) {
+            $tags = array_keys(array_flip($tags) + array_flip($related->tags));
         }
+        $tags = array_merge(array_diff($post->tags,$tags),$tags);
+        $comments = $post->comments;
         return view("site.blog-details",[
             'post'=>$post,
             'converter' => $converter,
             'related_posts'=>$related_posts,
             'tags'=>$tags,
             'categories'=>$categories,
+            'comments'=>$comments,
         ]);
+    }
+
+    public function comment(Request $request, string $slug)
+    {
+        $post = Post::where('slug',$slug)->first();
+        $request->validate([
+            'email'=>'required|email',
+            'name'=>'required|string|max:255|min:3',
+            'content'=>'required|string',
+        ]);
+        $post->comments()->create($request->only('name','email','content'));
+        return back()->with('success','Comment added successfully !');
     }
 }
