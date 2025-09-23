@@ -24,7 +24,7 @@
             >
             <strong class="hover:text-blanc duration-300 text-[#a5b4fc]"
               >Email:
-              <p class="text-[#a5b4fc]">microgels17@gmail.com</p></strong
+              <p class="text-[#a5b4fc]">info@microgells.com</p></strong
             >
           </div>
         </div>

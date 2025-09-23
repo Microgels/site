@@ -402,9 +402,9 @@ class="overflow-hidden bg-[#f7f8fa] pt-20 pb-20 lg:pt-[120px] lg:pb-[120px]"
               <img src="/storage/{{$member->avatar}}" alt="member image" class="w-full h-72 object-fit-contain object-cover" />
             </div>
             <div class="text-center">
-              <h4 class="mb-1 font-semibold"> {{ $member->name}} </h4>
+              <h4 class="mb-1 font-semibold"> {{ $member->name}}  {{ $member->lastname}}</h4>
               <p
-                data-translate="HEAD OF HUMAN RESOURCES"
+                {{-- data-translate="HEAD OF HUMAN RESOURCES" --}}
                 class="text-gray-500 mb-5 leading-[16px] text-[10px] uppercase"
               >
                 {{ $member->function }}
@@ -417,13 +417,13 @@ class="overflow-hidden bg-[#f7f8fa] pt-20 pb-20 lg:pt-[120px] lg:pb-[120px]"
                   <i class="bi bi-facebook text-[#a5b4fc]"></i>
                 </a>
                 <a
-                  href=" {{ $member->x_link }} "
+                  href=" {{ $member->github_link }} "
                   class="hover:text-primary text-dark-8"
                 >
-                  <i class="bi bi-twitter-x text-[#a5b4fc]"></i>
+                  <i class="bi bi-github text-[#a5b4fc]"></i>
                 </a>
-                <a href=" {{ $member->instagram_link }} " class="hover:text-primary text-dark-8">
-                  <i class="bi bi-instagram text-[#a5b4fc]"></i>
+                <a href=" {{ $member->linkedin_link }} " class="hover:text-primary text-dark-8">
+                  <i class="bi bi-linkedin text-[#a5b4fc]"></i>
                 </a>
               </div>
             </div>
