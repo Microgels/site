@@ -422,7 +422,7 @@ class="overflow-hidden bg-[#f7f8fa] pt-20 pb-20 lg:pt-[120px] lg:pb-[120px]"
                 >
                   <i class="bi bi-github text-[#a5b4fc]"></i>
                 </a>
-                <a href=" {{ $member->linkedin_link }} " class="hover:text-primary text-dark-8">
+                <a href=" {{ $member->instagram_link }} " class="hover:text-primary text-dark-8">
                   <i class="bi bi-linkedin text-[#a5b4fc]"></i>
                 </a>
               </div>

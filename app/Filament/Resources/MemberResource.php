@@ -34,7 +34,7 @@ class MemberResource extends Resource
                     ->required(),
                 Forms\Components\TextInput::make('facebook_link'),
                 Forms\Components\TextInput::make('x_link'),
-                Forms\Components\TextInput::make('instagram_link'),
+                Forms\Components\TextInput::make('instagram_link')->label('Linkedin Link'),
                 Forms\Components\TextInput::make('github_link'),
                 Forms\Components\TextInput::make('portfolio'),
                 FileUpload::make('avatar')
