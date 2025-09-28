@@ -19,7 +19,7 @@
       id="blog"
       class="pt-[110px] pb-[60px] flex flex-col justify-content-center items-center"
     >
-      <div class="container mx-auto px-6">
+      <div class="container mx-auto px-4">
         <div
           class="wow fadeInUp mx-auto mb-14 max-w-[690px] text-center lg:mb-[70px]"
           data-wow-delay=".2s"
@@ -62,7 +62,7 @@
         </div>
       </div>
 
-      <div class="max-w-[75%] mx-auto px-4 sm:px-2 xl:px-0">
+      <div class="max-w-[75%] mx-auto  sm:px-2 xl:px-0">
         <div class=" flex flex-wrap -mx-4">
           <!-- suggestion -->
           <div class="suggestion-section w-full lg:w-[30%] px-4">

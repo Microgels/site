@@ -127,7 +127,7 @@
                             </p> -->
                 <div class="w-full mb-10 overflow-hidden rounded-lg h-[500px]" data-wow-delay="0s">
                   <img src="/storage/{{ $post->avatar }}" alt="image" ,loading="lazy"
-                    class="object-cover w-full rounded-lg h-full " />
+                    class="object-cover w-full rounded-lg lg:h-full h-96" />
                 </div>
                 <div
                   class="mb-8 text-base font-medium leading-relaxed text-gray-500 sm:text-lg sm:leading-relaxed lg:text-base lg:leading-relaxed xl:text-lg xl:leading-relaxed"
