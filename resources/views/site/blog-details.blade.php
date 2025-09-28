@@ -125,7 +125,7 @@
                               esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
                               occaecat cupidatat.
                             </p> -->
-                <div class="w-full mb-10 overflow-hidden rounded-lg md:h-[500px] h-96" data-wow-delay="0s">
+                <div class="w-full mb-10 overflow-hidden rounded-lg lg:h-[500px] h-96" data-wow-delay="0s">
                   <img src="/storage/{{ $post->avatar }}" alt="image" ,loading="lazy"
                     class="object-cover w-full rounded-lg h-full" />
                 </div>
