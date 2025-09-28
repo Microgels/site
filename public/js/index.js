@@ -60,29 +60,47 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 });
 
-document.addEventListener("DOMContentLoaded", function () {
-    const paragraphs = document.querySelectorAll(".paragraphs");
+// document.addEventListener("DOMContentLoaded", function () {
+//     const paragraphs = document.querySelectorAll(".paragraphs");
 
-    paragraphs.forEach(p => {
-      let text = p.textContent.trim();
+//     paragraphs.forEach(p => {
+//       let text = p.textContent.trim();
 
-      if (text.length > 12) {
-        p.textContent = text.substring(0, 90) + "...";
-      }
-    });
+//       if (text.length > 12) {
+//         p.textContent = text.substring(0, 90) + "...";
+//       }
+//     });
+//   });
+
+//   document.addEventListener("DOMContentLoaded", function () {
+//     const title = document.querySelectorAll(".title");
+
+//     title.forEach(h => {
+//       let t = h.textContent.trim();
+
+//       if (t.length > 9) {
+//         h.textContent = t.substring(0, 30) + "...";
+//       }
+//     });
+//   });
+
+window.addEventListener("load", function () {
+  // Pour les descriptions
+  document.querySelectorAll(".paragraphs").forEach(p => {
+    const text = p.textContent.trim();
+    if (text.length > 80) {
+      p.textContent = text.substring(0, 80) + "…";
+    }
   });
 
-  document.addEventListener("DOMContentLoaded", function () {
-    const title = document.querySelectorAll(".title");
-
-    title.forEach(h => {
-      let t = h.textContent.trim();
-
-      if (t.length > 9) {
-        h.textContent = t.substring(0, 30) + "...";
-      }
-    });
+  // Pour les titres
+  document.querySelectorAll(".title").forEach(h => {
+    const t = h.textContent.trim();
+    if (t.length > 20) {
+      h.textContent = t.substring(0, 20) + "…";
+    }
   });
+});
 
 document.addEventListener("DOMContentLoaded", function () {
 
@@ -157,6 +175,20 @@ document.addEventListener("DOMContentLoaded", function () {
     "Discover our articles, advice, and analyses on development, networks, cybersecurity, and much more.":
       "Découvrez nos articles, conseils et analyses sur le développement, les réseaux, la cybersécurité et bien plus encore.",
     "Technology": "Technologie",
+    "Share this post": "Partager cet article",
+    "Related Posts": "Articles simulaires",
+    "Popular Category": "Catégories populaires",
+    "Popular Tags": "Tags populaires",
+    // "comments": "commentaires",
+    "Name": "Nom",
+    "Email adress": "Email",
+    "Your Comment": "Votre commentaire",
+    "Post Comment": "Poster un commentaire",
+    "Your comment has been posted successfully and is awaiting moderation.":
+      "Votre commentaire a été posté avec succès et est en attente de modération.",
+    "Share this post": "Partager cet article",
+    "Copy": "Copier",
+    "Link copied !": "Lien copié !",
 
     // Contact section
     "Contact Us": "Contactez-nous",
@@ -237,6 +269,26 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 
-// commentaire
+ const modal = document.getElementById('shareModal');
+  const openBtn = document.getElementById('openShareModal');
+  const closeBtn = document.getElementById('closeShareModal');
+  const copyBtn = document.getElementById('copyLinkBtn');
+  const copyMsg = document.getElementById('copyMsg');
+  const postLink = document.getElementById('postLink');
+
+  openBtn.addEventListener('click', () => modal.classList.remove('hidden'));
+  closeBtn.addEventListener('click', () => modal.classList.add('hidden'));
+
+  modal.addEventListener('click', (e) => {
+    if (e.target === modal) modal.classList.add('hidden');
+  });
+
+  copyBtn.addEventListener('click', () => {
+    navigator.clipboard.writeText(postLink.value)
+      .then(() => {
+        copyMsg.classList.remove('hidden');
+        setTimeout(() => copyMsg.classList.add('hidden'), 2000);
+      });
+  });
 
 

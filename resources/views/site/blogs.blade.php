@@ -149,7 +149,7 @@
               class="mb-10 rounded-md wow fadeInUp bg-[#f5fbff]"
               data-wow-delay="0s"
             >
-              <h3
+              <h3 data-translate="Popular Category"
                 class="px-8 py-4 text-lg font-semibold text-black border-b border-gray-200"
               >
                 Popular Category
@@ -180,7 +180,7 @@
               class="mb-10 rounded-md wow fadeInUp bg-[#f5fbff]"
               data-wow-delay="0s"
             >
-              <h3
+              <h3 data-translate="Popular Tags"
                 class="px-8 py-4 text-lg font-semibold text-black border-b border-gray-200"
               >
                 Popular Tags

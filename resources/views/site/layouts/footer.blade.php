@@ -13,7 +13,7 @@
               Microgels
             </p>
             <p class="hover:text-blanc duration-300 text-[#a5b4fc]">
-              Bujumbura, cibitoke
+              Bujumbura, Kinama
             </p>
             <p class="hover:text-blanc duration-300 text-[#a5b4fc]">
               Burundi
