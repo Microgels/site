@@ -705,9 +705,9 @@ class="pt-[110px] pb-[60px] flex flex-col justify-content-center items-center"
                 </span>
               </a>
             </h4>
-            <p class="paragraphs">
-              {{ $post->content }}
-            </p>
+            <div class="paragraphs">
+              {!! $converter->convert($post->content)->getContent() !!}
+            </div>
             <div
               class="flex flex-wrap gap-3 items-center justify-between mt-4.5"
             >
