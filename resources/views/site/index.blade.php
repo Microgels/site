@@ -687,7 +687,7 @@ class="pt-[110px] pb-[60px] flex flex-col justify-content-center items-center"
                 <img
                   src="/storage/{{$post->avatar}}"
                   alt="post image"
-                  class="w-full"
+                  class="w-full h-52 object-cover object-center"
                   loading="lazy"
                 />
               </a>
