@@ -1,13 +1,13 @@
-<header class="left-0 w-full  backdrop-blur-md text-white border-gray-200 bg-gray-600/5 sticky top-0 z-50">
+<header class="left-0 w-full  backdrop-blur-md text-white border-gray-200 bg-gray-600/5">
     <div class="container mx-auto px-6">
       <div class="relative flex items-center justify-between">
         <!-- Logo à gauche -->
         <div class="flex-shrink-0">
           <a href="javascript:void(0)" class="block py-5">
             <img
-              src="../img/logo MG3.png"
+              src="{{ asset('img/microgels.png') }}"
               alt="logo"
-              class="w-16 h-16 bg-[#1f2039] rounded-full"
+              class="w-16 h-16 bg-[#1f2039] rounded-md"
             />
           </a>
         </div>

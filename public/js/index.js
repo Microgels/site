@@ -60,6 +60,26 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 });
 
+const container = document.getElementById('star-container');
+    const count = 40;
+
+    for (let i = 0; i < count; i++) {
+      const particle = document.createElement('div');
+      particle.className = 'tech-particle';
+      
+      const x = Math.random() * 100;
+      const y = Math.random() * 100;
+      const delay = Math.random() * 5;
+      const duration = 5 + Math.random() * 10;
+      
+      particle.style.left = `${x}%`;
+      particle.style.top = `${y}%`;
+      particle.style.animationDelay = `${delay}s`;
+      particle.style.animationDuration = `${duration}s`;
+      
+      container.appendChild(particle);
+    }
+
 // document.addEventListener("DOMContentLoaded", function () {
 //     const paragraphs = document.querySelectorAll(".paragraphs");
 

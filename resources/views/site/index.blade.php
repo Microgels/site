@@ -105,80 +105,149 @@
     opacity: 1;
   }
 }
+ @keyframes pulse-glow {
+      0%, 100% { opacity: 0.4; transform: scale(1); }
+      50% { opacity: 0.7; transform: scale(1.05); }
+    }
+    @keyframes star-twinkle {
+      0%, 100% { opacity: 0.3; }
+      50% { opacity: 0.8; }
+    }
+    .glow-sphere {
+      background: radial-gradient(circle, rgba(99, 102, 241, 0.3) 0%, rgba(59, 130, 246, 0.1) 40%, transparent 70%);
+      animation: pulse-glow 8s ease-in-out infinite;
+    }
+    .star {
+      position: absolute;
+      background: white;
+      border-radius: 50%;
+      animation: star-twinkle 3s infinite;
+    }
+    .grid-lines {
+      background-size: 50px 50px;
+      background-image: 
+        linear-gradient(to right, rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+    }
+
+    .glass-nav {
+      background: rgba(5, 7, 10, 0.6);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    .cta-button {
+      background: linear-gradient(90deg, #3B82F6 0%, #6366F1 100%);
+      box-shadow: 0 0 20px rgba(59, 130, 246, 0.4);
+      transition: all 0.3s ease;
+    }
+    .cta-button:hover {
+      box-shadow: 0 0 30px rgba(99, 102, 241, 0.6);
+      transform: translateY(-1px);
+    }
+
+    @keyframes move-grid {
+      0% { transform: translateY(0); }
+      100% { transform: translateY(50px); }
+    }
+    @keyframes float-particle {
+      0%, 100% { transform: translate(0, 0); opacity: 0.3; }
+      50% { transform: translate(20px, -20px); opacity: 0.6; }
+    }
+    .grid-lines-animated {
+      background-size: 50px 50px;
+      background-image: 
+        linear-gradient(to right, rgba(59, 130, 246, 0.05) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(59, 130, 246, 0.05) 1px, transparent 1px);
+      animation: move-grid 10s linear infinite;
+    }
+    .tech-particle {
+      position: absolute;
+      width: 2px;
+      height: 2px;
+      background: #3B82F6;
+      box-shadow: 0 0 10px #3B82F6;
+      border-radius: 50%;
+      animation: float-particle 5s ease-in-out infinite;
+    }
 @endsection
 @section('body')
-<div
-id="acceuil"
-class="relative bg-white dark:bg-dark pt-[20px] pb-[110px] lg:pt-[150px]"
->
-<div class="container mx-auto px-6">
-  <div class="flex flex-wrap -mx-4 items-center">
-    <div class="w-full px-4 lg:w-5/12">
-      <div class="hero-content flex flex-col items-center md:block">
-        <h1
-          data-translate="Solving daily problems through digital solutions"
-          class="mb-3 text-4xl font-bold leading-snug text-[#1f2039] text-center md:text-start sm:text-[42px] lg:text-[40px] xl:text-[42px]"
-        >
-          Résoudre les problèmes quotidiens grâce aux solutions numériques
-        </h1>
-        <p
-          data-translate="Microgels specializes in providing digital solutions for small and medium-sized businesses. Our services include application/website development, IT network administration, graphic design, and digital skills training support, making us the ideal IT partner to boost your business growth."
-          class="mb-8 max-w-[480px] text-gray-500 text-center md:text-start"
-        >
-          Microgels est une entreprise spécialisée dans la fourniture des
-          solutions numériques pour les petites et moyenes entreprises.
-          Nos Services incluent le développement d'applications/sites web,
-          l'administration des réseaux informatiques, le graphisme et
-          l'accompagnement dans l'apprentissage des competences
-          numériques; ce qui fait de nous le partenaire informatique idéal
-          pour stimuler la croissance de votre entreprise
-        </p>
-        <ul class="flex flex-wrap items-center">
-          <a
-            data-translate="Explore Microgels Services"
-            href="{{ route('home') }}#services"
-            class="inline-flex items-center justify-center px-6 py-3 text-base font-medium text-center text-white rounded-md bg-[#1f2039] hover:bg-blue-dark lg:px-7"
-          >
-            Explorer les services Microgels
-          </a>
-        </ul>
-      </div>
-    </div>
-    <div class="hidden px-4 lg:block lg:w-1/12"></div>
-    <div class="w-full px-4 lg:w-6/12">
-      <div class="lg:ml-auto lg:text-right">
-        <div class="relative z-10 inline-block pt-11 lg:pt-0">
-          <img
-            src="{{ asset('img/hero.svg') }}"
-            alt="hero"
-            class="max-w-full lg:ml-auto"
-          />
-          <span class="absolute -left-8 -bottom-8 z-[-1]">
-            <svg
-              width="93"
-              height="93"
-              viewBox="0 0 93 93"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <div
-                class="w-32 h-32"
-                style="
-                  background-image: radial-gradient(
-                    #a5b4fc 3px,
-                    transparent 3px
-                  );
-                  background-size: 18px 18px;
-                "
-              ></div>
-            </svg>
-          </span>
-        </div>
-      </div>
-    </div>
-  </div>
+<div class="bg-[#05070A] text-white font-sans antialiased overflow-x-hidden">
+<section class="relative min-h-[85%] flex flex-col items-center justify-center overflow-hidden">
+<!-- Background Elements -->
+<div class="absolute inset-0 z-0 overflow-hidden pointer-events-none" data-purpose="hero-background">
+<!-- Grid Layer -->
+<div class="absolute inset-0 grid-lines-animated opacity-60"></div>
+<!-- Central Planet/Sphere Effect -->
+<div class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[1200px] h-[1200px] rounded-full glow-sphere"></div>
+<!-- Horizon Curve (inspired by IMAGE_1) -->
+<div class="absolute bottom-[-20%] left-[-10%] right-[-10%] h-[80%] rounded-[50%] bg-gradient-to-t from-[#05070A] via-[#05070A]/80 to-transparent border-t border-white/10"></div>
+<!-- Floating Particles/Stars -->
+<div class="absolute inset-0" id="star-container"></div>
+</div>
+
+
+<!-- BEGIN: HeroContent -->
+<main class="relative z-10 container mx-auto px-6 text-center mt-20" data-purpose="hero-main-content">
+<!-- Top Badge -->
+<div class="inline-flex items-center px-4 py-1.5 rounded-full bg-blue-500/5 border border-blue-500/20 mb-10 backdrop-blur-sm" data-purpose="status-badge">
+<span class="flex h-2 w-2 rounded-full bg-blue-500 mr-2 animate-pulse"></span>
+<span class="text-xs font-medium text-blue-100/70 tracking-wide uppercase">Incubateur Technologique</span>
+</div>
+<!-- Main Heading -->
+<h1 class="text-5xl md:text-7xl lg:text-8xl font-futuristic font-extrabold tracking-tighter mb-8 leading-[1.1] tracking-tight" data-purpose="hero-title">Automatiser les taches, <br class="hidden md:block"/>   <span class="bg-clip-text text-transparent bg-gradient-to-r from-blue-400 via-white to-indigo-400">facilités le travail</span></h1>
+<!-- Subtitle -->
+<p class="max-w-2xl mx-auto text-lg md:text-xl text-gray-400 mb-12 font-light leading-relaxed" data-purpose="hero-subtitle">Transformez vos idées en innovations. <br>
+Microgels, incubateur technologique et créateur de solutions numériques.
+</p>
+<!-- Primary Call to Action -->
+<div class="flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-6" data-purpose="hero-actions">
+  <a  href="{{ route('home') }}#services">
+<button class="cta-button cursor-pointer px-8 py-4 rounded-full font-semibold text-white transition-all w-full sm:w-auto">Explorer nos services</button>
+
+  </a>
+  <a  href="{{ route('home') }}#contact">
+    <button class="flex items-center cursor-pointer space-x-2 text-white/80 hover:text-white transition-colors group">
+<span class="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center group-hover:bg-white/10">
+<svg class="w-4 h-4 fill-current" viewbox="0 0 24 24"><path d="M8 5v14l11-7z"></path></svg>
+</span>
+<span class="font-medium">Devenir Partenaire</span>
+</button>
+  </a>
+
+</div>
+<!-- Mockup/Dashboard Preview (Lower part as in IMAGE_1) -->
+<div class="mt-24 relative max-w-5xl mx-auto rounded-t-2xl border-x border-t border-white/10 bg-brand-[#05070A] backdrop-blur-sm h-64 overflow-hidden" data-purpose="product-preview">
+<div class="flex items-center justify-between px-4 py-2 border-b border-white/5 bg-white/5">
+<div class="flex space-x-1.5">
+<div class="w-2.5 h-2.5 rounded-full bg-white/20"></div>
+<div class="w-2.5 h-2.5 rounded-full bg-white/20"></div>
+<div class="w-2.5 h-2.5 rounded-full bg-white/20"></div>
+</div>
+<div class="text-[10px] text-white/30 tracking-widest uppercase">Microgels Lab</div>
+<div class="w-10"></div>
+</div>
+<!-- Inner glow/content area -->
+<div class="p-8 flex items-center justify-center">
+<div class="w-full h-32 rounded-lg border border-dashed border-white/10 flex items-center justify-center text-white/20">
+             Incubation • Formations • Solutions numériques
+          </div>
 </div>
 </div>
+</main>
+<!-- END: HeroContent -->
+<!-- Award Badge (Bottom Right as in IMAGE_1) -->
+<div class="absolute bottom-8 right-8 z-20 hidden md:flex items-center p-4 rounded-xl border border-white/10 bg-black/40 backdrop-blur-md" data-purpose="award-badge">
+<div class="mr-4 text-right">
+<div class="text-xs text-gray-500 uppercase tracking-widest font-bold">Excellence IT</div>
+<div class="text-sm font-bold">Technology Partner</div>
+</div>
+<div class="w-12 h-12 flex items-center justify-center border-l border-white/10 pl-4">
+<span class="text-2xl">🏆</span>
+</div>
+</div>
+</section>
+</div>
+
 
 <!-- services section -->
 
