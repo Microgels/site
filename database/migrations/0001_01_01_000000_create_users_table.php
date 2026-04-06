@@ -19,6 +19,7 @@ return new class extends Migration
             $table->string('workos_id')->unique();
             $table->rememberToken();
             $table->text('avatar');
+            $table->string('password');
             $table->timestamps();
         });
 
