@@ -228,14 +228,14 @@
                     <span
                       class="bg-linear-to-r from-primary/50 to-primary/40 bg-[length:0px_10px] bg-left-bottom bg-no-repeat transition-[background-size] duration-500 hover:bg-[length:100%_3px] group-hover:bg-[length:100%_10px]"
                     >
-                      {{ $post->title }}
+                    {{ Str::limit($post->title, 75) }}
                     </span>
                   </a>
                 </h4>
                 
-                <div class="paragraphs">
-                  {!! $converter->convert($post->content)->getContent() !!}
-                </div>
+                <p class="paragraphs" >
+                  {{ Str::limit(strip_tags($converter->convert($post->content)->getContent()), 110) }}
+                </p>
 
                 <div
                   class="flex flex-wrap gap-3 items-center justify-between mt-4.5"
